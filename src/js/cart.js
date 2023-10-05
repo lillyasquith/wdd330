@@ -1,7 +1,11 @@
 import { getLocalStorage } from './utils.mjs';
 
 function renderCartContents() {
-  const cartItems = getLocalStorage('so-cart');
+  let cartItems = getLocalStorage('so-cart') || [];
+  // console.log(cartItems);
+  if(!Array.isArray(cartItems)) cartItems = [cartItems];
+  console.log(cartItems.length);
+  document.querySelector('.num_items').innerHTML = cartItems.length;
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector('.product-list').innerHTML = htmlItems.join('');
 }
