@@ -1,9 +1,9 @@
-import { setLocalStorage,getLocalStorage } from './utils.mjs';
+import { setLocalStorage,getLocalStorage } from './utils.mjs';//using getLocalStorage to get the items 
 import { findProductById } from './productData.mjs';
 
-function addProductToCart(product) {
-  let cart_items;//get items to put in the bag
-  cart_items = getLocalStorage('so-cart') || [];// emty array
+function addProductToCart(product) {//fixed this function
+  let cart_items;
+  cart_items = getLocalStorage('so-cart') || [];//get items to put in the bag or set it to an emty array
   if(!Array.isArray(cart_items)) cart_items = [cart_items];// make an array for cart-items
 
   cart_items.push(product);
