@@ -20,5 +20,9 @@ function addProductToCart(product) {
 function renderProductDetails(){
     document.querySelector('#productName').innerText = product.Brand.Name;
     document.querySelector('#productNameWithoutBrand').innerText = product.NameWithoutBrand;
-//to finish the rest of the info...
+    document.querySelector('#productImage').innerHTML = product.Image;
+    document.querySelector('#productFinalPrice').innerText = product.FinalPrice;
+    document.querySelector('#productColorName').innerText = product.ColorName;
+    document.querySelector('#productDescriptionHtmlSimple').innerText = product.DescriptionHtmlSimple;
+
 }
