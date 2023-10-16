@@ -1,6 +1,6 @@
 import { setLocalStorage, getParam} from './utils.mjs';
 import { findProductById } from './productData.mjs';
-import productDetails from './productDetails.mjs';
+import productDetails from './productDetails.mjs';//import 
 
 const productId = getParam('product');//test your getParams function in product.js to see if you can
 //get the product id successfully when someone navigates to the product-details page.
