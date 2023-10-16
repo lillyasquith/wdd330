@@ -20,9 +20,9 @@ function addProductToCart(product) {
 function renderProductDetails(){
     document.querySelector('#productName').innerText = product.Brand.Name;
     document.querySelector('#productNameWithoutBrand').innerText = product.NameWithoutBrand;
-    document.querySelector('#productImage').innerHTML = product.Image;
-    document.querySelector('#productFinalPrice').innerText = product.FinalPrice;
-    document.querySelector('#productColorName').innerText = product.ColorName;
+    document.querySelector('#productImage').innerText = product.Image;//img is not working
+    document.querySelector('#productFinalPrice').innerText = `$${product.FinalPrice}`;
+    document.querySelector('#productColorName').innerText = product.Colors.ColorName;// colorName is not working
     document.querySelector('#productDescriptionHtmlSimple').innerText = product.DescriptionHtmlSimple;
 
 }
