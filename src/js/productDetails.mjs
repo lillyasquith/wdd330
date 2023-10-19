@@ -25,4 +25,5 @@ function renderProductDetails(){
     document.querySelector('#productDescriptionHtmlSimple').innerHTML = product.DescriptionHtmlSimple; //why use innerHTML instead of innerText. (weird icons appreared with innerText)
     
 }
-// Can not add product to cart
+// Can not add product to cart issue //items showed as NULL in cart
+//fixed code in cart.js and utils.mjs
