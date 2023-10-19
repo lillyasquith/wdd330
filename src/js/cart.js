@@ -13,9 +13,6 @@ import { getLocalStorage } from './utils.mjs';
   });
   // console.log(htmlItems);
   element.insertAdjacentHTML("afterbegin", htmlItems.join(""));//add items into elements
-    
-  document.querySelector('.product-list').innerHTML = htmlItems.join('');
-}
 
 function cartItemTemplate(item) {
   // console.log(item);
