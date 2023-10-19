@@ -11,9 +11,18 @@ export function getLocalStorage(key) {
 }
 // save data to local storage
 export function setLocalStorage(key, data) {
-  let dataArray = [];
-  dataArray = getLocalStorage(key);
-  dataArray.push(data);
+  let dataArray = [];//added dataArray because items showed as NULL/ undefined in cart
+  if(!getLocalStorage(key)){
+    dataArray = [];
+  }else{
+    dataArray = getLocalStorage(key);
+  }
+  // console.log(data);
+  if(data != undefined){
+    console.log(data);
+    dataArray.push(data);
+  }
+  
   localStorage.setItem(key, JSON.stringify(dataArray));
 }
 // set a listener for both touchend and click
