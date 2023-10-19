@@ -1,3 +1,4 @@
+
 import { setLocalStorage, getParam} from './utils.mjs';
 import { findProductById } from './productData.mjs';
 import productDetails from './productDetails.mjs';
@@ -9,12 +10,18 @@ productDetails(productId);
 // const data =await findProductById(productId);
 // console.log(data);
 
-function addProductToCart(product) {
-  setLocalStorage('so-cart', product);
+function addProductToCart(product) {//fixed this function
+  let cart_items;
+  cart_items = getLocalStorage('so-cart') || [];//get items to put in the bag or set it to an emty array
+  if(!Array.isArray(cart_items)) cart_items = [cart_items];// make an array for cart-items
+
+  cart_items.push(product);
+  setLocalStorage('so-cart', cart_items);
 }
 // add to cart button event handler
 async function addToCartHandler(e) {
-  const product = await findProductById(e.target.dataset.id);
+  const product = await findProductById(e.target.dataset.id); //
+  // console.log(product);
   addProductToCart(product);
 }
 
