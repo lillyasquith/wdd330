@@ -1,17 +1,25 @@
 import { getLocalStorage } from './utils.mjs';
 
-function renderCartContents() {
-  let cartItems = getLocalStorage('so-cart') || [];
-  // console.log(cartItems);
-  if(!Array.isArray(cartItems)) cartItems = [cartItems];
-  console.log(cartItems.length);//show the number of itens
+ function renderCartContents() {
+  const cartItems = getLocalStorage('so-cart');
+  //console.log(cartItems);
+  if(cartItems !== null) {
+    //console.log(cartItems.length);//show the number of items
+    document.querySelector('.num_items').innerHTML = cartItems.length;
+  }
+  const element = document.querySelector('.product-list'); // element product list 
+  const htmlItems = cartItems.map((item) => {
+  console.log(item);
+  return cartItemTemplate(item)// add return 
+  // const cartItem = cartItemTemplate(item)
+  // element.insertAdjacentHTML()
   
-  document.querySelector('.num_items').innerHTML = cartItems.length;
-  const htmlItems = cartItems.map((item) => cartItemTemplate(item));
-  document.querySelector('.product-list').innerHTML = htmlItems.join('');
-}
-
+  });
+  // console.log(htmlItems);
+  element.insertAdjacentHTML("afterbegin", htmlItems.join(""));//add items into elements
+  }
 function cartItemTemplate(item) {
+  // console.log(item);
   const newItem = `<li class="cart-card divider">
   <a href="#" class="cart-card__image">
     <img

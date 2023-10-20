@@ -11,7 +11,19 @@ export function getLocalStorage(key) {
 }
 // save data to local storage
 export function setLocalStorage(key, data) {
-  localStorage.setItem(key, JSON.stringify(data));
+  let dataArray = [];//added dataArray because items showed as NULL/ undefined in cart
+  if(!getLocalStorage(key)){
+    dataArray = [];
+  }else{
+    dataArray = getLocalStorage(key);
+  }
+  // console.log(data);
+  if(data != undefined){
+    console.log(data);
+    dataArray.push(data);
+  }
+  
+  localStorage.setItem(key, JSON.stringify(dataArray));
 }
 // set a listener for both touchend and click
 export function setClick(selector, callback) {
@@ -20,4 +32,15 @@ export function setClick(selector, callback) {
     callback();
   });
   qs(selector).addEventListener("click", callback);
+}
+
+//create a new function in the utils.mjs file called getParam(param) 
+//that we can use to get a parameter from the URL when we need to. 
+//(Don't forget to return the parameter!)
+export function getParam(param){
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const product = urlParams.get('product')
+  return product;
+  //or //return urlParams.get(param);
 }
