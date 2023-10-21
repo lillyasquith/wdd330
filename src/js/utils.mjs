@@ -44,3 +44,5 @@ export function getParam(param){
   return product;
   //or //return urlParams.get(param);
 }
+
+function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = true)
