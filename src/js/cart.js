@@ -3,6 +3,10 @@ import { getLocalStorage } from './utils.mjs';
  function renderCartContents() {
   const cartItems = getLocalStorage('so-cart');
   console.log(cartItems);
+  if(cartItems !== null) {
+    //console.log(cartItems.length);//show the number of items
+    document.querySelector('.num_items').innerHTML = cartItems.length;
+  }
   const element = document.querySelector('.product-list'); // element product list 
   const htmlItems = cartItems.map((item) => {
     console.log(item);

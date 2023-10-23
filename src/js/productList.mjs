@@ -1,4 +1,4 @@
-import { doc } from "prettier";
+
 import { getData } from "./productData.mjs";
 
 function productCardTemplate(product) {

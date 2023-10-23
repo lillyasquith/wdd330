@@ -42,7 +42,7 @@ export function getParam(param){
   const urlParams = new URLSearchParams(queryString);
   const product = urlParams.get('product')
   return product;
-  //or //return urlParams.get(param);
+  //or return urlParams.get(param);
 }
 
-function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = true)
+//function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = true)
