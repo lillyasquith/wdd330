@@ -45,4 +45,13 @@ export function getParam(param){
   //or return urlParams.get(param);
 }
 
-//function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = true)
+export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = true){
+  if(clear){
+    parentElement.innerHTML = "";
+  }
+  const htmlStrings = list.map(templateFn);
+    // console.log(selectEl);
+  // console.log(htmlStrings);
+  console.log(htmlStrings.join());
+    parentElement.insertAdjacentHTML(position, htmlStrings.join());
+}
