@@ -25,3 +25,4 @@ function renderProductDetails(){
     document.querySelector('#productDescriptionHtmlSimple').innerHTML = product.DescriptionHtmlSimple; //why use innerHTML instead of innerText. (weird icons appreared with innerText)
     
 }
+

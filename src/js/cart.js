@@ -7,18 +7,15 @@ import { getLocalStorage } from './utils.mjs';
   document.querySelector('.num_items').innerHTML = cartItems.length;
   const element = document.querySelector('.product-list'); // element product list 
   const htmlItems = cartItems.map((item) => {
-    console.log(item);
-    return cartItemTemplate(item)// add return 
-    // const cartItem = cartItemTemplate(item)
-    // element.insertAdjacentHTML()
+  console.log(item);
+  return cartItemTemplate(item)// add return 
+  // const cartItem = cartItemTemplate(item)
+  // element.insertAdjacentHTML()
   
   });
   // console.log(htmlItems);
   element.insertAdjacentHTML("afterbegin", htmlItems.join(""));//add items into elements
-    
-  document.querySelector('.product-list').innerHTML = htmlItems.join('');
-}
-
+  }
 function cartItemTemplate(item) {
   // console.log(item);
   const newItem = `<li class="cart-card divider">
