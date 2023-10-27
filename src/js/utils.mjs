@@ -55,3 +55,28 @@ export function renderListWithTemplate(templateFn, parentElement, list, position
   console.log(htmlStrings.join());
     parentElement.insertAdjacentHTML(position, htmlStrings.join());
 }
+
+export function renderWithTemplate(headerTemplateFn, headerEl, data, footerTemplateFn, footerEl) {
+  // get template using function...no need to loop this time.
+  const headerTemplateFn = loadTemplate("/partials/header.html");
+  const footerTemplateFn = loadTemplate("/partials/footer.html");
+  
+  if(callback) {
+      callback(data);
+  }
+}
+function loadTemplate(path) {
+  // wait what?  we are returning a new function? 
+  // this is called currying and can be very helpful.
+  return async function () {
+      const res = await fetch(path);
+      if (res.ok) {
+      const html = await res.text();
+      return html;
+      }
+  };
+} 
+function loadHeaderFooter(){
+  loadTemplate(path);
+  renderWithTemplate();
+}
