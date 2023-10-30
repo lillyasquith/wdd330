@@ -1,10 +1,13 @@
 import { getLocalStorage } from './utils.mjs';
 
  function renderCartContents() {
-  const cartItems = getLocalStorage('so-cart');
+  let cartItems = getLocalStorage('so-cart');
   console.log(cartItems);
+  if(!cartItems){
+    cartItems = [];
+  }
   //console.log(cartItems.length);//show the number of items
-  document.querySelector('.num_items').innerHTML = cartItems.length;
+  document.querySelector('.num_items').innerHTML = cartItems.length;//lenght works with array
   const element = document.querySelector('.product-list'); // element product list 
   const htmlItems = cartItems.map((item) => {
   console.log(item);
