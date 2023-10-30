@@ -3,11 +3,11 @@ import { getLocalStorage } from './utils.mjs';
  function renderCartContents() {
   let cartItems = getLocalStorage('so-cart');
   console.log(cartItems);
-  if(!cartItems){
-    cartItems = [];
+  if(!cartItems){ //if there is no item in cart, length will show an error. Therefore, we need an emty array
+    cartItems = [];//lenght works with array
   }
   //console.log(cartItems.length);//show the number of items
-  document.querySelector('.num_items').innerHTML = cartItems.length;//lenght works with array
+  document.querySelector('.num_items').innerHTML = cartItems.length;
   const element = document.querySelector('.product-list'); // element product list 
   const htmlItems = cartItems.map((item) => {
   console.log(item);
