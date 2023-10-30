@@ -142,7 +142,7 @@ span:hover {
 .product-list {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   list-style-type: none;
   padding: 0;
 }
