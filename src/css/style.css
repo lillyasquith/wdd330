@@ -137,14 +137,14 @@ span:hover {
   margin: auto;
 }
 .products {
-  padding: 0.5em;
+  padding: 1em;
 }
 .product-list {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   list-style-type: none;
-  padding: 0;
+  padding: 10px;
 }
 .product-list a {
   text-decoration: none;
@@ -156,7 +156,7 @@ span:hover {
   margin: 0.25em;
   padding: 0.5em;
   border: 1px solid var(--light-grey);
-  max-width: 250px;
+  max-width: 500px;
 }
 .product-card h2,
 .product-card h3,
