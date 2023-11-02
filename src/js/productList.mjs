@@ -28,9 +28,10 @@ export default async function productList(selector, category) {
     // get the list of products 
     console.log("asdf");
     let products = await getData(category);//without async, await will show an error. 
-    console.log(products[0]);
+    //Write a method in productList.mjs that will filter our list of products to just the 4 we need
+    const filtered = products.filter((item)=> item.Id !== '989CG' && item.Id !== '880RT')
     // renderList(products, selectEl);
-    renderListWithTemplate(productCardTemplate, selectEl, products);
+    renderListWithTemplate(productCardTemplate, selectEl, filtered);
     // render out the product list to the element
     //renderList (selectEl, products);
 }
