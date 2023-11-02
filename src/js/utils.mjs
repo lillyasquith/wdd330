@@ -42,5 +42,16 @@ export function getParam(param){
   const urlParams = new URLSearchParams(queryString);
   const product = urlParams.get('product')
   return product;
-  //or //return urlParams.get(param);
+  //or return urlParams.get(param);
+}
+
+export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = true){
+  if(clear){
+    parentElement.innerHTML = "";
+  }
+  const htmlStrings = list.map(templateFn);
+    // console.log(selectEl);
+  // console.log(htmlStrings);
+  console.log(htmlStrings.join());
+    parentElement.insertAdjacentHTML(position, htmlStrings.join());
 }
