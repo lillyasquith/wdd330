@@ -5,8 +5,8 @@ import { loadHeaderFooter }  from "./utils.mjs"
 //  export function renderCartContents() {
 //   let cartItems = getLocalStorage('so-cart');
 //   console.log(cartItems);
-//   if (!cartItems){
-//     cartItems = [];
+//   if (!cartItems){ //if there is no item in cart, length will show an error. Therefore, we need an emty array
+//     cartItems = [];//lenght works with array
 //   }
 //   console.log(document.querySelector('.num_items'))
 //   //console.log(cartItems.length);//show the number of items
@@ -17,7 +17,6 @@ import { loadHeaderFooter }  from "./utils.mjs"
 //   return cartItemTemplate(item)// add return 
 //   // const cartItem = cartItemTemplate(item)
 //   // element.insertAdjacentHTML()
-  
 //   });
 //   // console.log(htmlItems);
 //   element.insertAdjacentHTML("afterbegin", htmlItems.join(""));//add items into elements
