@@ -31,8 +31,11 @@
 //   .addEventListener('click', addToCartHandler);
 
 
-import { getParam } from "./utils.mjs";
+import { getParam, loadHeaderFooter } from "./utils.mjs";
 import productDetails from "./productDetails.mjs";
+
+//loadHeaderFooter for product_pages/index.html
+await loadHeaderFooter();
 
 const productId = getParam("product");
 productDetails(productId);

@@ -16,9 +16,9 @@ function productCardTemplate(product) {
 }         
 
 function renderList(list, selectEl) {
-    const htmlStrings = list.map(productCardTemplate);
-    console.log(selectEl);
-    selectEl.insertAdjacentHTML('afterbegin', htmlStrings.join()); //The join() method returns an array as a string and does not change the original array.
+  const htmlStrings = list.map(productCardTemplate);
+  console.log(selectEl);
+  selectEl.insertAdjacentHTML('afterbegin', htmlStrings.join()); //The join() method returns an array as a string and does not change the original array.
 }
 
 export default async function productList(selector, category) {
@@ -26,11 +26,11 @@ export default async function productList(selector, category) {
     // get the element we will insert the list into from the selector
     let selectEl = document.querySelector(selector);
     // get the list of products 
-    console.log("asdf");
     let products = await getData(category);//without async, await will show an error. 
-    console.log(products[0]);
+    //Write a method in productList.mjs that will filter our list of products to just the 4 we need
+    const filtered = products.filter((item)=> item.Id !== '989CG' && item.Id !== '880RT')
     // renderList(products, selectEl);
-    renderListWithTemplate(productCardTemplate, selectEl, products);
+    renderListWithTemplate(productCardTemplate, selectEl, filtered);
     // render out the product list to the element
     //renderList (selectEl, products);
 }
