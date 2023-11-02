@@ -1,5 +1,6 @@
-import { getLocalStorage } from './utils.mjs';
+
 import { renderCartContents } from './shoppingCart.mjs';
+import { loadHeaderFooter }  from "./utils.mjs"
 
 //  export function renderCartContents() {
 //   let cartItems = getLocalStorage('so-cart');
