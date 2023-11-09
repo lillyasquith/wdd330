@@ -3,8 +3,9 @@ import { getData } from "./productData.mjs";
 import { renderListWithTemplate } from "./utils.mjs";
 
 function productCardTemplate(product) {
+  //fixed the path of product pages
     return `<li class="product-card">
-    <a href="product_pages/index.html?product=${product.Id}">
+    <a href="/product_pages/index.html?product=${product.Id}"> 
     <img
       src="${product.Image}"
       alt="Image of ${product.Name}"
@@ -28,9 +29,10 @@ export default async function productList(selector, category) {
     // get the list of products 
     let products = await getData(category);//without async, await will show an error. 
     //Write a method in productList.mjs that will filter our list of products to just the 4 we need
-    const filtered = products.filter((item)=> item.Id !== '989CG' && item.Id !== '880RT')
+    // const filtered = products.filter((item)=> item.Id !== '989CG' && item.Id !== '880RT')
     // renderList(products, selectEl);
-    renderListWithTemplate(productCardTemplate, selectEl, filtered);
+    console.log(products);
+    renderListWithTemplate(productCardTemplate, selectEl, products);
     // render out the product list to the element
     //renderList (selectEl, products);
 }
