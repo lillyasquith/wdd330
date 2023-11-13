@@ -138,6 +138,12 @@ span:hover {
 }
 .products {
   padding: 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.products img {
+  width: 120px;
 }
 .product-list {
   display: flex;
@@ -182,6 +188,7 @@ span:hover {
 .product-detail img {
   width: 100%;
 }
+
 
 /* Start cart list card styles */
 .cart-card {
