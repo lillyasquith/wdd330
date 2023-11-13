@@ -48,8 +48,8 @@
               d="M60.1 71.4v3.3h-5.2v-3.4c-1.7-0.3-3.3-0.7-4.6-1 -0.9 6.8-1.1 13.3-0.3 14.5 0.4 0.3 2.9 1.1 8 1.1h0c5 0 8.8-0.7 9.7-1.3 0.8-1.3 0.6-7.7-0.4-14.4C65.5 70.5 62.7 71.1 60.1 71.4z"
             />
 
-            <!-- <text x="0" y="115" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Natalia Woodroffe</text>
-            <text x="0" y="120" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text> -->
+            <text x="0" y="115" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Natalia Woodroffe</text>
+            <text x="0" y="120" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text>
           </svg>
         </a>
       </div>
@@ -58,39 +58,106 @@
     <main class="divider">
       <section class="products">
         <h2>My Cart</h2>
+        <ul class="product-list"></ul>
+      </section>
+      <section id="formField">
+        <form>
+          <h2 id="formTitle">Review & Place your Order</h2>
+          <fieldset>
+            <legend>Shipping</legend>
+            <label class="top">First Name* <input type="text" name="fname" placeholder="Joe" required></label>
+            <label class="top">Last Name* <input type="text" name="lname" placeholder="Smith" required></label>
+            <label class="top">Street* <input type="text" name="street" required></label>
+            <label class="top">City* <input type="text" name="city" required></label>
+            <label class="top">State* <input type="text" name="state" required></label>
+            <label class="top">Zip* <input type="text" name="zipcode" required></label>
+          </fieldset>
+          <fieldset>
+            <legend>Payment</legend>
+            <label class="middle">Card number* <input type="text" name="card-num" required></label>
+            <label class="middle">Expiration * <input type="text" name="expiration-date" required></label>
+            <label class="middle">Security Code * <input type="text" name="security-num" required></label>
+          </fieldset>
+          <fieldset>
+            <legend>Order Summary</legend>
+            <p class="bottom">Item Subtotals (<span class="numItems"></span>) <span class="cartTotal"></span></p>
+            <p class="bottom">Shipping Estimate <span class="shipping"></span></p>
+            <p class="bottom">Tax <span class="tax"></span></p>
+            <h5 class="bottom">Order Total <span class="orderTotal"></span></h5>
+          </fieldset>
+          <input class="submitBtn" type="submit" value="Check Out">
+        </form>
+        <style>
+          #formField {
+            display: block;
+            font-size: 20px;
+            width: 100%;  
+            text-align: center;
+          }
+          #formTitle {
+            text-align: center;
+            padding: 20px;
+          }
+          form fieldset {
+            text-align: left;
+            border: 1px solid orange;
+            border-radius: 10px; 
+            margin-bottom: 50px; 
+            margin-left: 20px; 
+            margin-right: 20px;
+            padding: 10px;
+            background-color: rgb(235, 237, 241);
+          }
+          form legend {
+            text-align: center;
+            font-weight:500;
+            font-size: 30px;
+          }
+          form label.top, form label.middle,form label.text, form label.bottom {
+            display: block;
+            padding-top: 1rem;
+          }
 
-        <ul class="product-list">
-          <!-- <li class="cart-card divider">
-            <a href="product_pages/marmot-ajax-3.html" class="cart-card__image">
-              <img
-                src="images/tents/marmot-ajax-tent-3-person-3-season-in-pale-pumpkin-terracotta~p~880rr_01~320.jpg"
-                alt="Marmot Ajax tent"
-              />
-            </a>
-            <a href="product_pages/marmot-ajax-3.html">
-              <h2 class="card__name">Marmot Ajax Tent - 3-Person, 3-Season</h2>
-            </a>
-            <p class="cart-card__color">Pale Pumpkin/Terracotta</p>
-            <p class="cart-card__quantity">qty: 1</p>
-            <p class="cart-card__price">$199.99</p>
-          </li>
-          <li class="cart-card divider">
-            <a href="product_pages/marmot-ajax-3.html" class="cart-card__image">
-              <img
-                src="images/tents/the-north-face-talus-tent-4-person-3-season-in-golden-oak-saffron-yellow~p~985rf_01~320.jpg"
-                alt="Talus Tent - 4-Person, 3-Season"
-              />
-            </a>
-            <a href="product_pages/marmot-ajax-3.html">
-              <h2 class="card__name">
-                The North Face Talus Tent - 4-Person, 3-Season
-              </h2></a
-            >
-            <p class="cart-card__color">Golden Oak/Saffron Yellow</p>
-            <p class="cart-card__quantity">qty: 1</p>
-            <p class="cart-card__price">$199.99</p>
-          </li> -->
-        </ul>
+          form label.top input, form label.top select, form label.middle input, form label.middle select {
+            display: block;
+            border: 1px solid orange ;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 25rem;
+            color: #100E39;
+            padding: 10px;
+          }
+          
+          form label.bottom select, form label.bottom input {
+            margin: 10px;
+          }
+
+          form label.text select {
+            display: block;
+            border-radius: 5px;
+            background-color: #edecf8;
+            color: #100E39;
+            width: 100%;
+            padding-bottom: 100px;
+          }
+
+          form input.submitBtn {
+            border: none;
+            background-color: orange;
+            color: aliceblue;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 50px;
+            width: 100%;
+            max-width: 20rem;
+            font-size: large;
+          
+          }
+
+          form input.submitBtn:hover {
+            transform: scale(1.1);
+          }
+        </style>
       </section>
     </main>
 

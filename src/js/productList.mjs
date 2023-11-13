@@ -1,5 +1,5 @@
 
-import { getData } from "./productData.mjs";
+import { getProductsByCategory } from "./externalServices.mjs";
 import { renderListWithTemplate } from "./utils.mjs";
 
 function productCardTemplate(product) {
@@ -27,7 +27,7 @@ export default async function productList(selector, category) {
     // get the element we will insert the list into from the selector
     let selectEl = document.querySelector(selector);
     // get the list of products 
-    let products = await getData(category);//without async, await will show an error. 
+    let products = await getProductsByCategory(category);//without async, await will show an error. 
     //Write a method in productList.mjs that will filter our list of products to just the 4 we need
     // const filtered = products.filter((item)=> item.Id !== '989CG' && item.Id !== '880RT')
     // renderList(products, selectEl);

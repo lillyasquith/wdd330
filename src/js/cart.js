@@ -1,4 +1,5 @@
 
+import checkoutProcess from './checkoutProcess.mjs';
 import { renderCartContents } from './shoppingCart.mjs';
 import { loadHeaderFooter }  from "./utils.mjs"
 
@@ -44,3 +45,5 @@ import { loadHeaderFooter }  from "./utils.mjs"
 renderCartContents();
 //loadHeaderFooter for cart/index.html
 await loadHeaderFooter();
+
+checkoutProcess.init("so-cart", '');

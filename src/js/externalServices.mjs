@@ -14,7 +14,7 @@ function convertToJson(res) {
 // }
 
 //Change the getData function to Pulling from an API
-export async function getData(category) {
+export async function getProductsByCategory(category) {
   console.log(category);
   const response = await fetch(baseURL + `products/search/${category}`);
   const data = await convertToJson(response);
@@ -34,3 +34,5 @@ export async function findProductById(id) {
   const product = await convertToJson(response);
   return product.Result;
 }
+
+// use this http://server-nodejs.cit.byui.edu:3000/checkout
