@@ -46,4 +46,9 @@ renderCartContents();
 //loadHeaderFooter for cart/index.html
 await loadHeaderFooter();
 
-checkoutProcess.init("so-cart", '');
+checkoutProcess.init("so-cart", "");
+document.forms["checkout"].addEventListener("submit", (event)=>{
+    event.preventDefault();
+
+    checkoutProcess.checkout(event.target);
+})

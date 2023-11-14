@@ -61,22 +61,31 @@
         <ul class="product-list"></ul>
       </section>
       <section id="formField">
-        <form>
+        <form name="checkout" method="get">
           <h2 id="formTitle">Review & Place your Order</h2>
           <fieldset>
             <legend>Shipping</legend>
-            <label class="top">First Name* <input type="text" name="fname" placeholder="Joe" required></label>
-            <label class="top">Last Name* <input type="text" name="lname" placeholder="Smith" required></label>
-            <label class="top">Street* <input type="text" name="street" required></label>
-            <label class="top">City* <input type="text" name="city" required></label>
-            <label class="top">State* <input type="text" name="state" required></label>
-            <label class="top">Zip* <input type="text" name="zipcode" required></label>
+            <label class="top" for="fname">First Name*</label>
+            <input type="text" id="fname" placeholder="Joe" required>
+            <label class="top" for ="lname">Last Name*</label>
+            <input type="text" id="lname" placeholder="Smith" required>
+            <label class="top" for="street">Street*</label>
+            <input type="text" id="street" required>
+            <label class="top" for="city">City* </label>
+            <input type="text" id="city" required>
+            <label class="top" for="state">State*</label>
+            <input type="text" id="state" required>
+            <label class="top" for="zip">Zip*</label>
+            <input type="text" id="zip" required>
           </fieldset>
           <fieldset>
             <legend>Payment</legend>
-            <label class="middle">Card number* <input type="text" name="card-num" required></label>
-            <label class="middle">Expiration * <input type="text" name="expiration-date" required></label>
-            <label class="middle">Security Code * <input type="text" name="security-num" required></label>
+            <label class="middle" for="cardNumber">Card number* </label>
+            <input type="text" id="cardNumber" required>
+            <label class="middle" for="expiration">Expiration *</label>
+            <input type="text" id="expiration" required>
+            <label class="middle" for="code">Security Code *</label>
+            <input type="text" id="code" required>
           </fieldset>
           <fieldset>
             <legend>Order Summary</legend>

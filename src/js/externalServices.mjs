@@ -35,4 +35,14 @@ export async function findProductById(id) {
   return product.Result;
 }
 
-// use this http://server-nodejs.cit.byui.edu:3000/checkout
+export async function checkout(payload){
+  const options = {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(payload)
+}
+  return await fetch("http://server-nodejs.cit.byui.edu:3000/checkout", options).then(convertToJson);
+}
+

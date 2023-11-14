@@ -1,4 +1,30 @@
+import { checkout } from "./externalServices.mjs";
 import { getLocalStorage } from "./utils.mjs";
+
+
+function formDataToJSON(formElement) {
+  const formData = new FormData(formElement),
+    convertedJSON = {};
+
+  formData.forEach(function (value, key) {
+    convertedJSON[key] = value;
+  });
+
+  return convertedJSON;
+}
+function packageItems(items) {
+  // convert the list of products from localStorage to the simpler form required for the checkout process. Array.map would be perfect for this.
+  const simplifiedForm = [];
+  items.forEach(item => {
+    simplifiedForm.push({
+      id: item.Id,
+      price: item.FinalPrice,
+      name: item.Name,
+      quantity: 1,
+    })
+  })
+  return simplifiedForm;
+}
 
 const checkoutProcess = {
     key: "",
@@ -35,8 +61,7 @@ const checkoutProcess = {
   },
   calculateOrdertotal: function() {
     // calculate the tax amounts. Then use them to along with the cart total to figure out the order total
-    const tax = 0.06;
-    this.tax = this.itemTotal * tax
+    this.tax = this.itemTotal * 0.06
 
     // calculate the shipping
     const items = this.list.length;
@@ -56,10 +81,30 @@ const checkoutProcess = {
     document.querySelector(".orderTotal").innerHTML = this.orderTotal;
   },
 
-  checkout: function(){
-    
-  }
+  checkout: async function(form){
+    // build the data object from the calculated fields, the items in the cart, and the information entered into the form
 
+    // call the checkout method in our externalServices module and send it our data object.
+    // console.log(formDataToJSON(form));
+    const json = formDataToJSON(form);
+
+    json.orderDate = new Date();
+    json.orderTotal = this.orderTotal;
+    json.shipping = this.shipping;
+    json.tax = this.tax;
+    json.items = packageItems(this.list);
+    console.log(json)
+
+    try{
+      const result = await checkout(json);
+      console.log(result);
+    }
+    catch(err){
+      console.log(err);
+    }
+    
+
+  }
   
   
 }
