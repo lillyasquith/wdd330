@@ -22,18 +22,14 @@ const checkoutProcess = {
     // Use $10 for the first item plus $2 for each additional item for shipping.
   calculateItemSummary: function() {
     // calculate and display the total amount of the items in the cart, and the number of items.
-    // let subTotal = 0;
     const numItems = this.list.length;
-    // const subTotal = this.list.reduce((sum, item) => sum + item.FinalPrice
-    // );
     this.list.forEach(item=> {
       // console.log(item.FinalPrice);
       this.itemTotal += item.FinalPrice;
     })
     console.log(numItems);
-    // console.log(subTotal);
-
-    document.querySelector('.numItems').innerHTML = numItems;
+  
+    document.querySelector(".numItems").innerHTML = numItems;
     document.querySelector(".cartTotal").innerHTML = `$${this.itemTotal}`;
 
   },
@@ -41,7 +37,6 @@ const checkoutProcess = {
     // calculate the tax amounts. Then use them to along with the cart total to figure out the order total
     const tax = 0.06;
     this.tax = this.itemTotal * tax
-    
 
     // calculate the shipping
     const items = this.list.length;
