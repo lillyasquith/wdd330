@@ -89,10 +89,10 @@
           </fieldset>
           <fieldset>
             <legend>Order Summary</legend>
-            <p class="bottom">Item Subtotals (<span class="numItems"></span>) <span class="cartTotal"></span></p>
-            <p class="bottom">Shipping Estimate <span class="shipping"></span></p>
-            <p class="bottom">Tax <span class="tax"></span></p>
-            <h5 class="bottom">Order Total <span class="orderTotal"></span></h5>
+            <p class="bottom">Item Subtotals: (<span class="numItems"></span>)<span class="cartTotal"></span></p>
+            <p class="bottom">Shipping Estimate: <span class="shipping"></span></p>
+            <p class="bottom">Tax: <span class="tax"></span></p>
+            <h5 class="bottom">Order Total: <span class="orderTotal"></span></h5>
           </fieldset>
           <input class="submitBtn" type="submit" value="Check Out">
         </form>
@@ -165,6 +165,9 @@
 
           form input.submitBtn:hover {
             transform: scale(1.1);
+          }
+          .cartTotal {
+            float: right;
           }
         </style>
       </section>
