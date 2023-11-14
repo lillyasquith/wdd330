@@ -43,6 +43,6 @@ export async function checkout(payload){
   },
   body: JSON.stringify(payload)
 }
-  return await fetch("http://server-nodejs.cit.byui.edu:3000/checkout", options).then(convertToJson);
+  return await fetch("http://server-nodejs.cit.byui.edu:3000/checkout", options);
 }
 

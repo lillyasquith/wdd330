@@ -95,13 +95,13 @@ const checkoutProcess = {
     json.items = packageItems(this.list);
     console.log(json)
 
-    try{
-      const result = await checkout(json);
-      console.log(result);
-    }
-    catch(err){
-      console.log(err);
-    }
+    // try{
+    //   const result = await checkout(json);
+    //   console.log(result);
+    // }
+    // catch(err){
+    //   console.log(err);
+    // }
     
 
   }
