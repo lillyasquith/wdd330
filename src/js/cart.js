@@ -50,5 +50,5 @@ checkoutProcess.init("so-cart", "");
 document.forms["checkout"].addEventListener("submit", (event)=>{
     event.preventDefault();
 
-    checkoutProcess.checkout(event.target);// target?
+    checkoutProcess.checkout(event.target);
 })

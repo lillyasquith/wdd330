@@ -101,7 +101,7 @@ const checkoutProcess = {
       const result = await checkout(json);
       console.log(result);
 
-      // setLocalStorage("so-cart", []);
+      // set localStorage to emty array after checkout
       localStorage.setItem("so-cart", JSON.stringify([])); // search for JSON.parse and JSON.stringify
       location.assign("/checkout/success.html");
     }
