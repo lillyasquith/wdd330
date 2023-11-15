@@ -7,6 +7,7 @@ export function renderCartContents() {
     if (!cartItems){
       cartItems = [];
     }
+    console.log(cartItems.length);
     console.log(document.querySelector('.num_items'))
     //console.log(cartItems.length);//show the number of items
     document.querySelector('.num_items').innerHTML = cartItems.length;

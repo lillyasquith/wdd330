@@ -1,9 +1,11 @@
 const baseURL = import.meta.env.VITE_SERVER_URL
-function convertToJson(res) {
+async function convertToJson(res) {
+  const data = await res.json();
   if (res.ok) {
-    return res.json();
+    return data;
   } else {
-    throw new Error("Bad Response");
+    //throw new Error("Bad Response");
+    throw { name: 'servicesError', message: data };
   }
 }
 
@@ -43,6 +45,6 @@ export async function checkout(payload){
   },
   body: JSON.stringify(payload)
 }
-  return await fetch("http://server-nodejs.cit.byui.edu:3000/checkout", options);
+  return await fetch("http://server-nodejs.cit.byui.edu:3000/checkout", options).then(convertToJson);
 }
 
