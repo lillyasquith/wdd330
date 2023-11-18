@@ -102,7 +102,9 @@ const checkoutProcess = {
       console.log(result);
 
       // set localStorage to emty array after checkout
-      localStorage.setItem("so-cart", JSON.stringify([])); // search for JSON.parse and JSON.stringify
+      localStorage.setItem("so-cart", JSON.stringify([])); 
+      // stringify() : This method takes a JavaScript object and then transforms it into a JSON string 
+      //JSON. parse() : This method takes a JSON string and then transforms it into a JavaScript object
       location.assign("/checkout/success.html");
     }
     catch(err){
