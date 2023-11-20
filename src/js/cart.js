@@ -42,9 +42,14 @@ import { loadHeaderFooter }  from "./utils.mjs"
 //   return newItem;
 // }
 
-renderCartContents();
-//loadHeaderFooter for cart/index.html
-await loadHeaderFooter();
+
+init();
+
+async function init(){
+    renderCartContents();
+    //loadHeaderFooter for cart/index.html
+    await loadHeaderFooter();
+}
 
 checkoutProcess.init("so-cart", "");
 document.forms["checkout"].addEventListener("submit", (event)=>{
