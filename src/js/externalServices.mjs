@@ -1,4 +1,5 @@
 const baseURL = import.meta.env.VITE_SERVER_URL
+
 async function convertToJson(res) {
   const data = await res.json();
   if (res.ok) {
@@ -48,3 +49,24 @@ export async function checkout(payload){
   return await fetch("http://server-nodejs.cit.byui.edu:3000/checkout", options).then(convertToJson);
 }
 
+export async function loginRequest(creds){
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(creds)
+  }
+    return await fetch(baseURL + "login", options).then(convertToJson);
+
+}
+
+export async function getorders(token) {
+  const options = {
+    method: 'GET', //
+    headers: {
+      'Authorization': `Bearer ${token}`
+    },
+  }
+    return await fetch(baseURL + "orders", options).then(convertToJson);
+}
