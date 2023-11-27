@@ -12,21 +12,23 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@500&amp;family=PT+Sans&amp;display=swap"
       rel="stylesheet"
     />
+    <link href="https://db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon+Solid" rel="stylesheet">
+    
     <link rel="stylesheet" href="game.css" />
-    <script src="game.js"></script>
+    <script src="game.js" defer></script>
   </head>
 
   <body>
     <header>
-      <h1 id="heading">Memory Card Game</h1>
+      <h1 id="heading">Poke Match</h1>
     </header>
  
     <main>
       <div class="container">
-        <div id="game"></div>
+        <div id="pokeGame"></div>
       </div>
-      <div>
-        <p>Score: <span class="score"></span></p>
+      <div class="score">
+        <p>Score: <span id="points" ></span></p>
       </div>
       <div class="actions">
         <button onclick="restartGame()">Restart</button>
@@ -35,7 +37,8 @@
 
     <footer>
       <hr />
-      <p>&copy; <span id="year"></span> <span id="myName">Ly Dang</span> | WDD 330 Final Project</p>
+      <p>&copy; <span id="year"></span> <span id="myName">Ly Dang</span> | WDD 330 | Final Project</p>
     </footer>
+   
   </body>
 </html>

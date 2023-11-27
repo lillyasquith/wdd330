@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Card Game</title>
+    <meta
+      name="description"
+      content="Final Project for Ly Dang in WDD 330: Web Frontend Development at Brigham Young University - Idaho"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&amp;family=PT+Sans&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon+Solid" rel="stylesheet">
+    
+    <link rel="stylesheet" href="game.css" />
+    <script src="game.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <h1 id="heading">Poke Match</h1>
+    </header>
+ 
+    <main>
+      <div class="container">
+        <div id="pokeGame"></div>
+      </div>
+      <div class="score">
+        <p>Score: <span id="points" ></span></p>
+      </div>
+      <div class="actions">
+        <button onclick="restartGame()">Restart</button>
+      </div>
+    </main>
+
+    <footer>
+      <hr />
+      <p>&copy; <span id="year"></span> <span id="myName">Ly Dang</span> | WDD 330 | Final Project</p>
+    </footer>
+   
+  </body>
+</html>
