@@ -3,7 +3,7 @@ body {
     margin: 0 auto;
     font-family: "Pokemon Solid";
     letter-spacing: 3px;
-    background-color: #e5d5d2;
+    background-color: whitesmoke;
     padding: 10px;
     font-size: 1.5rem;
 }
@@ -20,25 +20,39 @@ body {
     grid-template-rows: repeat(4, 200px);
     justify-content: center;
     align-items: center;  
-    grid-gap: 10px;
+    grid-gap: 20px;
    
 }
-
+#pokeGame img {
+    width: 120px;
+}
+#pokeGame h2 {
+    font-size: 1.2rem;
+    color: #04482d;
+}
 .card {
     height: 100%;
     box-shadow: 0 3px 10px black;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    transform-style: preserve-3d;
 }
-
-.front {
+.front, .back {
     height: 100%;
     width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 1s;
+}
+.front {
     background-image: url("./pokemon192.png");
     background-position: center;
     background-repeat: no-repeat;
     background-color: #04482d;
+}
+.rotated {
+    transform: rotateY(180deg);
 }
 .score {
     color: #04482d;
