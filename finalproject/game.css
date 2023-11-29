@@ -46,7 +46,7 @@ body {
     transition: transform 1s;
 }
 .front {
-    background-image: url("./pokemon192.png");
+    background-image: url("/finalproject/images/pokemon192.png ");
     background-position: center;
     background-repeat: no-repeat;
     background-color: #04482d;
