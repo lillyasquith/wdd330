@@ -3,6 +3,9 @@ const pokeAPI = "https://pokeapi.co/api/v2/pokemon/";
 
 const game = document.querySelector("#pokeGame")
 
+let isPause = false;
+let firstPick;
+
 const colors = {
 	fire: '#FDDFDF',
 	grass: '#DEFDE0',
@@ -71,8 +74,8 @@ function rotateCard(event) {
     //console.log(event.currentTarget.dataset.pokename)
     const pokemonCard = event.currentTarget;
     const [front, back] = getFrontAndBackFromCard(pokemonCard);
-    front.classList.toggle('rotated');
-    back.classList.toggle('rotated');
+    front.classList.toggle("rotated"); //use classList to toggle 
+    back.classList.toggle("rotated");
 
 }
 function getFrontAndBackFromCard(card){
