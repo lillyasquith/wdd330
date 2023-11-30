@@ -3,6 +3,7 @@ const pokeAPI = "https://pokeapi.co/api/v2/pokemon/";
 
 const game = document.querySelector("#pokeGame")
 
+let score = 0;
 let isPause = false;
 let firstPick;
 
@@ -78,7 +79,7 @@ function rotateCard(event) {
     back.classList.toggle("rotated");
 
 }
-function getFrontAndBackFromCard(card){
+function getFrontAndBackFromCard(card){ 
     const front = card.querySelector(".front");
     const back = card.querySelector(".back");
     return [front, back]

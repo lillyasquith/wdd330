@@ -1,3 +1,4 @@
+
 body {
     text-align: center;
     margin: 0 auto;
@@ -12,22 +13,23 @@ body {
     font-size: 3rem;
 }
 .container {
-    padding: 30px;
+    padding: 20px;
 }
 #pokeGame {
     display: grid;
-    grid-template-columns: repeat(4, 200px);
-    grid-template-rows: repeat(4, 200px);
+    grid-template-columns: repeat(4, 160px);
+    grid-template-rows: repeat(4, 160px);
     justify-content: center;
     align-items: center;  
     grid-gap: 20px;
    
 }
 #pokeGame img {
-    width: 120px;
+    width: 110px;
 }
 #pokeGame h2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    margin-top: -30px;
     color: #04482d;
 }
 .card {
@@ -46,7 +48,7 @@ body {
     transition: transform 1s;
 }
 .front {
-    background-image: url("/finalproject/images/pokemon192.png ");
+    background-image: url("/finalproject/images/pokemon128.png");
     background-position: center;
     background-repeat: no-repeat;
     background-color: #04482d;
@@ -56,6 +58,18 @@ body {
 }
 .score {
     color: #04482d;
+}
+.button {
+    background-color: #04482d;
+    color: whitesmoke;
+    font-size: 1.5rem;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+.button:hover {
+    transform: scale(1.2);
+    background-color: rgb(176, 5, 5);
+    /* transition: 0.5s;  */
 }
 footer {
     color: #04482d;
