@@ -4,7 +4,8 @@ const pokeAPI = "https://pokeapi.co/api/v2/pokemon/";
 const game = document.querySelector("#pokeGame")
 
 let score = 0;
-let isPause = false;
+let matches;
+let isPaused = false;
 let firstPick;
 
 const colors = {
@@ -43,13 +44,15 @@ function displayPokemon(pokemon) {
         const color = colors[type]
         return `
         <div class="card" style="background-color:${color}" onclick="rotateCard(event)" data-pokename = "${pokemon.name}">
+        
             <div class="front">
             </div>
+
             <div class="back rotated" style="background-color:${color}" >
                 <img src="${pokemon.sprites.front_default}" alt=${pokemon.name}/>
                 <h2>${pokemon.name}</h2>  
             </div>
-            
+     
         </div>
         `
     }).join("")
@@ -75,9 +78,43 @@ function rotateCard(event) {
     //console.log(event.currentTarget.dataset.pokename)
     const pokemonCard = event.currentTarget;
     const [front, back] = getFrontAndBackFromCard(pokemonCard);
-    front.classList.toggle("rotated"); //use classList to toggle 
-    back.classList.toggle("rotated");
 
+    if(front.classList.contains("rotated") || isPaused) return; //The contains() method is used to determines whether the collection contains a given item or not. If it contains the item then it returns true otherwise false.
+
+    isPaused = true;
+
+    // front.classList.toggle("rotated"); //use classList to toggle 
+    // back.classList.toggle("rotated");
+    rotateElements([front, back]) 
+    if (!firstPick) {
+        firstPick = pokemonCard
+        isPaused = false; 
+    }
+    else {
+        const secondPokename = pokemonCard.dataset.pokename;
+        const firstPokename = firstPick.dataset.pokename; //The dataset read-only property of the HTMLElement interface provides read/write access to custom data attributes (data-*) on elements (Web APIs)
+        if (firstPokename != secondPokename) {
+            const [firstFront, firstBack] = getFrontAndBackFromCard(firstPick);
+            setTimeout(() => {
+                rotateElements([front, back, firstFront, firstBack])
+                firstPick = null;
+                isPaused = false;
+            }, 500);     
+        }
+        else {
+            matches++;
+            if (matches == 8) {
+                console.log("winner")
+            }
+            firstPick = null;
+            isPaused = false;
+        }
+    }  
+}
+
+function rotateElements(elements){
+    if(typeof elements !="object" || !elements.length)return;
+    elements.forEach(element => element.classList.toggle("rotated"));
 }
 function getFrontAndBackFromCard(card){ 
     const front = card.querySelector(".front");
@@ -85,9 +122,18 @@ function getFrontAndBackFromCard(card){
     return [front, back]
 } 
 
-async function restartGame() {
-    const pokemon = await loadPokemon();
-    displayPokemon([... pokemon, ... pokemon]);//spreading the elements of the pokemon array twice using the spread (...) operator to duplicate the array.
+function restartGame() {
+    game.innerHTML = "";
+    isPaused = true;
+    firstPick = null;
+    matches = 0;
+    setTimeout(async () => {
+        const pokemon = await loadPokemon();
+        displayPokemon([... pokemon, ... pokemon]);//spreading the elements of the pokemon array twice using the spread (...) operator to duplicate the array.
+        isPaused = false;
+    }, 200);
+
+
 }
 restartGame();
 
