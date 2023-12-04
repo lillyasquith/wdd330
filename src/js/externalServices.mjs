@@ -50,6 +50,7 @@ export async function checkout(payload){
 }
 
 export async function loginRequest(creds){
+  console.log(creds);
   const options = {
     method: 'POST',
     headers: {
@@ -57,7 +58,8 @@ export async function loginRequest(creds){
     },
     body: JSON.stringify(creds)
   }
-    return await fetch(baseURL + "login", options).then(convertToJson);
+  const response = await fetch(baseURL + "login", options).then(convertToJson);
+  return response.accessToken;
 
 }
 
