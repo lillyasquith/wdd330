@@ -3,7 +3,7 @@ const pokeAPI = "https://pokeapi.co/api/v2/pokemon/";
 
 const game = document.querySelector("#pokeGame");
 let winnerAlert = document.querySelector("#alert-message");
-let score = document.querySelector("#points");
+let match = document.querySelector("#points");
 
 let matches;
 let isPaused = false;
@@ -103,7 +103,12 @@ function rotateCard(event) {
             }, 500);     
         }
         else {
-            matches++;
+            matches += 1;
+            console.log(matches);
+            // const match = document.querySelector('#match');
+            // match.innerHTML = matches;
+            match.innerHTML = `Score: ${matches}`;
+
             if (matches == 8) {
                winnerAlert.innerHTML = "Congratulations! You've won the game";
             }
@@ -129,6 +134,7 @@ function restartGame() {
     isPaused = true;
     firstPick = null;
     matches = 0;
+    match.innerHTML = `Score: ${matches}`;
     setTimeout(async () => {
         const pokemon = await loadPokemon();
         displayPokemon([... pokemon, ... pokemon]);//spreading the elements of the pokemon array twice using the spread (...) operator to duplicate the array.
