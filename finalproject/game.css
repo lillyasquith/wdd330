@@ -35,7 +35,7 @@ body {
 
 #alert-message {
     color: rgb(176, 5, 5);
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .card {
     height: 100%;
@@ -53,7 +53,7 @@ body {
     transition: transform 1s;
 }
 .front {
-    background-image: url("/finalproject/images/pokemon128.png");
+    background-image: url("./images/pokemon128.png");
     background-position: center;
     background-repeat: no-repeat;
     background-color: #04482d;

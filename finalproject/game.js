@@ -107,8 +107,7 @@ function rotateCard(event) {
             console.log(matches);
             // const match = document.querySelector('#match');
             // match.innerHTML = matches;
-            match.innerHTML = `Score: ${matches}`;
-
+            match.innerHTML = `Score: ${matches}/8`;
             if (matches == 8) {
                winnerAlert.innerHTML = "Congratulations! You've won the game";
             }
@@ -134,7 +133,7 @@ function restartGame() {
     isPaused = true;
     firstPick = null;
     matches = 0;
-    match.innerHTML = `Score: ${matches}`;
+    match.innerHTML = `Score: ${matches}/8`;
     setTimeout(async () => {
         const pokemon = await loadPokemon();
         displayPokemon([... pokemon, ... pokemon]);//spreading the elements of the pokemon array twice using the spread (...) operator to duplicate the array.
