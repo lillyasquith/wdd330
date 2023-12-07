@@ -1,9 +1,10 @@
 
 const pokeAPI = "https://pokeapi.co/api/v2/pokemon/";
 
-const game = document.querySelector("#pokeGame")
+const game = document.querySelector("#pokeGame");
+let winnerAlert = document.querySelector("#alert-message");
+let score = document.querySelector("#points");
 
-let score = 0;
 let matches;
 let isPaused = false;
 let firstPick;
@@ -104,7 +105,7 @@ function rotateCard(event) {
         else {
             matches++;
             if (matches == 8) {
-                console.log("winner")
+               winnerAlert.innerHTML = "Congratulations! You've won the game";
             }
             firstPick = null;
             isPaused = false;
@@ -124,6 +125,7 @@ function getFrontAndBackFromCard(card){
 
 function restartGame() {
     game.innerHTML = "";
+    winnerAlert.innerHTML = "";
     isPaused = true;
     firstPick = null;
     matches = 0;

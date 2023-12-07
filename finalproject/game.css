@@ -25,16 +25,21 @@ body {
    
 }
 #pokeGame img {
-    width: 110px;
+    width: 120px;
 }
 #pokeGame h2 {
     font-size: 1rem;
     margin-top: -30px;
     color: #04482d;
 }
+
+#alert-message {
+    color: rgb(176, 5, 5);
+    font-size: 2rem;
+}
 .card {
     height: 100%;
-    box-shadow: 0 3px 10px black;
+    box-shadow: 0 3px 10px #04482d;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
@@ -72,5 +77,6 @@ body {
     /* transition: 0.5s;  */
 }
 footer {
-    color: #04482d;
+    color: rgb(176, 5, 5);
+    font-size: 1rem;
 }
