@@ -12,34 +12,54 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@500&amp;family=PT+Sans&amp;display=swap"
       rel="stylesheet"
     />
-    <link href="https://db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon+Solid" rel="stylesheet">
-    
+    <link
+      href="https://db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon+Solid"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="game.css" />
     <script src="game.js" defer></script>
   </head>
 
   <body>
+    <p id="victory-text"></p>
     <header>
       <h1 id="heading">Poke Match</h1>
     </header>
- 
     <main>
-      <p id="alert-message"></p>
+      <!-- <div class="overlay-text">Click to Start</div>
+      <div id="game-over-text" class="overlay-text">
+        GAME OVER
+        <span class="overlay-text-small">
+          <button class="button" onclick="restartGame()">Play Again</button>
+        </span>
+      </div>
+      <div id="victory-text " class="overlay-text">
+        <span class="overlay-text-small">
+          <button class="button" onclick="restartGame()">Play Again</button>
+        </span>
+      </div> -->
       <div class="container">
-        <div id="pokeGame"></div>
-      </div>
-      <div class="score">
-        <p id="points">Score: <span id="match"></span></p>
-      </div>
-      <div class="actions">
-        <button class="button" onclick="restartGame()">Restart</button>
+        <div class="container-info">
+          <div class="time-info">
+            Time: <span id="time-remaining">100</span>
+          </div>
+          <div class="score-info">
+            <p id="points">Score: </p>
+            <span id="match"></span>
+          </div>
+        </div>
+        <div class="container-game">
+          <div id="pokeGame"></div>
+        </div>
+        <button class="button" onclick="restartGame()">Play Again</button>
       </div>
     </main>
-
     <footer>
       <hr />
-      <p>&copy; <span id="year"></span> <span>Ly Dang</span> | WDD 330 | Final Project</p>
+      <p>
+        &copy; <span id="year"></span> <span>Ly Dang</span> | WDD 330 | Final
+        Project
+      </p>
     </footer>
-   
   </body>
 </html>

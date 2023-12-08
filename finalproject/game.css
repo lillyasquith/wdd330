@@ -4,16 +4,63 @@ body {
     margin: 0 auto;
     font-family: "Pokemon Solid";
     letter-spacing: 3px;
-    background-color: whitesmoke;
-    padding: 10px;
+    background: radial-gradient(#edbfb7,#f7edeb );
     font-size: 1.5rem;
 }
 #heading {
     color: #04482d;
     font-size: 3rem;
+    padding-top: 30px;
 }
+/* .overlay-text {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.overlay-text-small {
+    font-size: 1rem;
+}
+.overlay-text.visible {
+    display: flex;
+    flex-direction: column;
+    animation: overlay-grow 1000ms forwards;
+} */
+
+@keyframes overlay-grow {
+    from {
+        background-color: #04482d;
+        font-size: 0;
+    }
+    to {
+        background-color: #06774a;
+        font-size: 10em;
+    }
+}
+
+
 .container {
-    padding: 20px;
+    padding: 50px;
+}
+.container-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+}
+.score-info {
+    color: #026940;
+    font-size: 1.5rem;
+}
+.time-info {
+    color:#026940 ;
+    font-size: 1.5rem;
 }
 #pokeGame {
     display: grid;
@@ -61,15 +108,13 @@ body {
 .rotated {
     transform: rotateY(180deg);
 }
-.score {
-    color: #04482d;
-}
+
 .button {
     background-color: #04482d;
     color: whitesmoke;
     font-size: 1.5rem;
     padding: 10px;
-    margin-bottom: 50px;
+    margin-top: 100px;
 }
 .button:hover {
     transform: scale(1.2);
@@ -77,6 +122,21 @@ body {
     /* transition: 0.5s;  */
 }
 footer {
-    color: rgb(176, 5, 5);
+    color: #04482d;
     font-size: 1rem;
+    padding-top: 20px;
+}
+
+@media (max-width: 600px) {
+    #pokeGame {
+        grid-template-columns: repeat(2, 140px);
+        grid-template-rows: repeat(8, 140px);
+    }
+    .container-info {
+        gap: 10px;
+        flex-direction: column;
+    }
+    .container {
+        padding: 50px;
+    }
 }

@@ -2,7 +2,7 @@
 const pokeAPI = "https://pokeapi.co/api/v2/pokemon/";
 
 const game = document.querySelector("#pokeGame");
-let winnerAlert = document.querySelector("#alert-message");
+let winnerAlert = document.querySelector("#victory-text");
 let match = document.querySelector("#points");
 
 let matches;
