@@ -10,66 +10,22 @@ body {
 #heading {
     color: #04482d;
     font-size: 3rem;
-    padding-top: 30px;
-}
-/* .overlay-text {
-    display: none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-}
-.overlay-text-small {
-    font-size: 1rem;
-}
-.overlay-text.visible {
-    display: flex;
-    flex-direction: column;
-    animation: overlay-grow 1000ms forwards;
-} */
-
-@keyframes overlay-grow {
-    from {
-        background-color: #04482d;
-        font-size: 0;
-    }
-    to {
-        background-color: #06774a;
-        font-size: 10em;
-    }
+    padding-top: 20px;
 }
 
 
-.container {
-    padding: 50px;
-}
-.container-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 200px;
-}
 .score-info {
     color: #026940;
-    font-size: 1.5rem;
-}
-.time-info {
-    color:#026940 ;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 #pokeGame {
     display: grid;
     grid-template-columns: repeat(4, 160px);
     grid-template-rows: repeat(4, 160px);
     justify-content: center;
-    align-items: center;  
+    align-items: center;
     grid-gap: 20px;
-   
+
 }
 #pokeGame img {
     width: 120px;
@@ -81,11 +37,13 @@ body {
 }
 
 #victory-text {
-    color: rgb(176, 5, 5);
+    color: #026940;
     font-size: 1.5rem;
+    padding-top: 20px;
 }
 .card {
     height: 100%;
+    width: 100%;
     box-shadow: 0 3px 10px #04482d;
     border-radius: 10px;
     position: relative;
@@ -114,7 +72,7 @@ body {
     color: whitesmoke;
     font-size: 1.5rem;
     padding: 10px;
-    margin-top: 100px;
+    margin-top: 20px;
 }
 .button:hover {
     transform: scale(1.2);

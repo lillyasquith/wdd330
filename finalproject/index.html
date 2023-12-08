@@ -21,35 +21,18 @@
   </head>
 
   <body>
-    <p id="victory-text"></p>
     <header>
       <h1 id="heading">Poke Match</h1>
     </header>
     <main>
-      <!-- <div class="overlay-text">Click to Start</div>
-      <div id="game-over-text" class="overlay-text">
-        GAME OVER
-        <span class="overlay-text-small">
-          <button class="button" onclick="restartGame()">Play Again</button>
-        </span>
-      </div>
-      <div id="victory-text " class="overlay-text">
-        <span class="overlay-text-small">
-          <button class="button" onclick="restartGame()">Play Again</button>
-        </span>
-      </div> -->
       <div class="container">
-        <div class="container-info">
-          <div class="time-info">
-            Time: <span id="time-remaining">100</span>
-          </div>
-          <div class="score-info">
-            <p id="points">Score: </p>
-            <span id="match"></span>
-          </div>
+        <div class="score-info">
+          <p id="points">Score:</p>
+          <!-- <span id="match"></span> -->
         </div>
-        <div class="container-game">
-          <div id="pokeGame"></div>
+        <div id="pokeGame"></div>
+        <div>
+          <p id="victory-text"></p>
         </div>
         <button class="button" onclick="restartGame()">Play Again</button>
       </div>

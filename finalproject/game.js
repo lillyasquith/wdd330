@@ -29,7 +29,7 @@ const colors = {
 async function loadPokemon() {
     const randomIds = new Set();
     while(randomIds.size < 8) {
-        const randomNum = Math.ceil(Math.random()* 200);
+        const randomNum = Math.ceil(Math.random()* 100);
         randomIds.add(randomNum)
     }
     // console.log([...randomIds]);
@@ -109,7 +109,7 @@ function rotateCard(event) {
             // match.innerHTML = matches;
             match.innerHTML = `Score: ${matches}/8`;
             if (matches == 8) {
-               winnerAlert.innerHTML = "Congratulations! You've won the game";
+               winnerAlert.innerHTML = "🎉 Congratulations! You have won the game 🎉";
             }
             firstPick = null;
             isPaused = false;
