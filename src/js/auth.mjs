@@ -1,6 +1,7 @@
 import { loginRequest } from "./externalServices.mjs";
 import { alertMessage, getLocalStorage, setLocalStorage } from "./utils.mjs";
 import * as jwt_decode from "jwt-decode";
+// import jwt_decode from "jwt-decode";
 
 
 const tokenKey = "so-token";
@@ -21,7 +22,8 @@ function isTokenValid(token) {
     // check to make sure a token was actually passed in.
     if (token) {
         // decode the token
-        const decoded = jwt_decode(token);
+        // console.log(token);
+        const decoded = jwt_decode.jwtDecode(token[0]);
         // get the current date
         let currentDate = new Date();
         // JWT exp is in seconds, the time from our current date will be milliseconds.
